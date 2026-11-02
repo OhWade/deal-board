@@ -1,0 +1,302 @@
+/* ---------- Form ---------- */
+.form {
+  max-width: 720px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.formSold {
+  --accent: var(--sold);
+  --accent-tint: var(--sold-tint);
+}
+
+.formPurchased {
+  --accent: var(--purchased);
+  --accent-tint: var(--purchased-tint);
+}
+
+.formSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--rule);
+}
+
+.formSection h2 {
+  font-size: var(--step-1);
+}
+
+.gridVehicle {
+  display: grid;
+  grid-template-columns: 8rem 1fr 1fr;
+  gap: 1rem;
+}
+
+.gridDeal {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+/* Sold / Purchased toggle */
+.toggle {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.toggleOption {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  padding: 1rem 1.25rem;
+  border: 2px solid var(--rule-strong);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  cursor: pointer;
+}
+
+.optSold {
+  --opt: var(--sold);
+  --opt-tint: var(--sold-tint);
+}
+
+.optPurchased {
+  --opt: var(--purchased);
+  --opt-tint: var(--purchased-tint);
+}
+
+.toggleOption input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.toggleOption:has(input:checked) {
+  border-color: var(--opt);
+  background: var(--opt-tint);
+}
+
+.toggleOption:has(input:focus-visible) {
+  outline: 3px solid var(--marker);
+  outline-offset: 2px;
+}
+
+.toggleLabel {
+  font: 700 var(--step-2) / 1 var(--font-display);
+}
+
+.toggleOption:has(input:checked) .toggleLabel {
+  color: var(--opt);
+}
+
+.toggleHint {
+  color: var(--muted);
+  font-size: var(--step--1);
+}
+
+/* Add-ons */
+.addOns {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.85rem;
+}
+
+.addOns > p {
+  margin: 0;
+}
+
+.addOnRow {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 10rem auto;
+  gap: 0.75rem;
+  align-items: start;
+}
+
+.removeAddOn {
+  margin-top: 1.6rem;
+  color: var(--muted);
+}
+
+/* Sticky footer with the running total */
+.formFooter {
+  position: sticky;
+  bottom: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 0;
+  background: var(--paper);
+  border-top: 3px solid var(--accent);
+}
+
+.total {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.totalLabel {
+  color: var(--muted);
+  font-size: var(--step--1);
+}
+
+.totalValue {
+  font: 700 var(--step-3) / 1 var(--font-display);
+  color: var(--accent);
+}
+
+.footerActions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+/* ---------- Deals list ---------- */
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.search {
+  flex: 1 1 16rem;
+  max-width: 22rem;
+}
+
+.tableWrap {
+  overflow-x: auto;
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-md);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--step--1);
+}
+
+.table th {
+  text-align: left;
+  font-weight: 600;
+  color: var(--muted);
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--rule-strong);
+  white-space: nowrap;
+}
+
+.table td {
+  padding: 0.8rem 1rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.table tbody tr {
+  cursor: pointer;
+}
+
+.table tbody tr:hover {
+  background: var(--paper);
+}
+
+.table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.trSold {
+  --accent: var(--sold);
+}
+
+.trPurchased {
+  --accent: var(--purchased);
+}
+
+.trSold td:first-child,
+.trPurchased td:first-child {
+  box-shadow: inset 3px 0 0 var(--accent);
+}
+
+.typeTag {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.rowLink {
+  font-weight: 600;
+  text-decoration: none;
+  font-size: var(--step-0);
+}
+
+.rowLink:hover {
+  text-decoration: underline;
+}
+
+.num {
+  text-align: right !important;
+  white-space: nowrap;
+}
+
+.strong {
+  font-weight: 600;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.pager {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.empty {
+  padding: 3rem 1.5rem;
+  text-align: center;
+  background: var(--surface);
+  border: 1px dashed var(--rule-strong);
+  border-radius: var(--radius-md);
+}
+
+.empty p {
+  margin: 0 0 1rem;
+}
+
+@media (max-width: 560px) {
+  .gridVehicle {
+    grid-template-columns: 5.5rem 1fr;
+  }
+
+  .gridVehicle > :last-child {
+    grid-column: 1 / -1;
+  }
+
+  .gridDeal,
+  .toggle {
+    grid-template-columns: 1fr;
+  }
+
+  .addOnRow {
+    grid-template-columns: 1fr 7.5rem;
+  }
+
+  .removeAddOn {
+    grid-column: 1 / -1;
+    margin-top: -0.5rem;
+    justify-self: start;
+    padding-left: 0;
+  }
+}
